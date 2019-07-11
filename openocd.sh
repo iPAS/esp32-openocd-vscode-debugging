@@ -1,10 +1,9 @@
 #!/bin/bash
 ## http://www.uchiembedded.co.in/jtag_debugging_for_esp32_en.pdf
 
-parameters=$1
-#firmware=$1
-#[[ "${firmware}" == "" ]] && firmware="blink.bin"
-#echo 'Firmware: '"${firmware}" 
+firmware=$1
+[[ "${firmware}" == "" ]] && firmware="blink.bin"
+echo 'Firmware: '"${firmware}" 
 
 #openocd_path=openocd-esp32-linux64-0.10.0-esp32-20180920
 openocd_path=openocd-esp32-latest
@@ -15,8 +14,8 @@ cfg=myopenocd_bb.cfg
 # program_esp32 <image_file> <offset> [verify] [reset] [exit]
 #parameters="-c 'program_esp32 ${firmware} 0x10000 verify exit'"  
 
-echo ${openocd_cmd} -s "${openocd_path}/share/openocd/scripts" -f "$cfg" ${parameters}
-${openocd_cmd}      -s "${openocd_path}/share/openocd/scripts" -f "$cfg" ${parameters}  &
+#${openocd_cmd} -s "${openocd_path}/share/openocd/scripts" -f "$cfg"  &
+${openocd_cmd} -s "${openocd_path}/share/openocd/scripts" -f "$cfg" -c "program_esp32 ${firmware} 0x10000 verify"  &
 pid=$!  # NOT $$
 
 trap 'kill -9 $pid; exit' INT TERM EXIT
