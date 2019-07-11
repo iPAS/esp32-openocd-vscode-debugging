@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "openocd",
+        "type": "shell",
+        "isBackground": true,
+        "options": {
+          "cwd": "/home/ipas/Development/OpenOCD-ESP32"
+        },
+        "command": "./openocd.sh ${workspaceFolder}/build/${fileBasename}.bin",
+      }
+    ]
+  }
