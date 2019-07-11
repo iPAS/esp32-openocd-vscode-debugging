@@ -16,6 +16,9 @@
 ## Created with:
 #   > git diff fix_buffer_compile_error~1 fix_buffer_compile_error > ../fix_openocd-esp32_espressif_compile-error.patch
 
-cd openocd-esp32_espressif 
+cd openocd-esp32_espressif
+git checkout master 
 patch -p1 < ../fix_openocd-esp32_espressif_compile-error.patch
+git add . 
+git commit -m'Patch to fix errors.'
 cd ..

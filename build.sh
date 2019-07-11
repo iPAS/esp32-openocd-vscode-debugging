@@ -10,6 +10,8 @@ git submodule update --init --recursive
 git submodule foreach --recursive git clean -xfd
 git submodule foreach --recursive git reset --hard
 
+./patch.sh  # FIXME: Quick-fix the openocd-esp32_espressif repo.
+
 cd openocd-esp32_espressif
 
 ./bootstrap
