@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/home/ipas/Workspace/Arduino/hardware/espressif/esp32/**",
+                "/home/ipas/Development/arduino-nightly/libraries/**",
+                "/home/ipas/Workspace/Arduino/libraries/**",
+                "/home/ipas/Workspace/Arduino/hardware/espressif/esp32/libraries/**",
+                "/home/ipas/Workspace/Arduino/hardware/espressif/esp32/cores/esp32",
+                "/home/ipas/Workspace/Arduino/hardware/espressif/esp32/tools/sdk/include/**",
+                "/home/ipas/Workspace/Arduino/hardware/espressif/esp32/tools/xtensa-esp32-elf/xtensa-esp32-elf/include/**",
+                "/home/ipas/Workspace/Arduino/hardware/espressif/esp32/variants/heltec_wifi_lora_32"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": false,
+                "path": []
+            },
+            "intelliSenseMode": "clang-x64",
+            "defines": [],
+            "forcedInclude": []
+        }
+    ],
+    "version": 4
+}

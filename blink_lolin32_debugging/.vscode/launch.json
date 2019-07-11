@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "gdb",
+      "request": "launch",
+      "name": "Debug program",
+      "cwd": "${workspaceFolder}",
+      "target": "build/${fileBasename}.elf",
+      "gdbpath": "/home/ipas/Workspace/Arduino/hardware/espressif/esp32/tools/xtensa-esp32-elf/bin/xtensa-esp32-elf-gdb",
+
+      "autorun": [
+        "target remote :3333",
+        "set remote hardware-watchpoint-limit 2",
+        "mon reset halt",
+        "flushregs",
+        "thb app_main",
+        "c"
+      ],
+
+    //   "preLaunchTask": "openocd"
+    }
+  ]
+}
