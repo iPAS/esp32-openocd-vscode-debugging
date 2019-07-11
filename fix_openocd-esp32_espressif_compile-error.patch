@@ -1,0 +1,39 @@
+diff --git a/src/flash/nor/xmc4xxx.c b/src/flash/nor/xmc4xxx.c
+index 78ed2258..d47fea3d 100644
+--- a/src/flash/nor/xmc4xxx.c
++++ b/src/flash/nor/xmc4xxx.c
+@@ -931,7 +931,7 @@ static int xmc4xxx_get_info_command(struct flash_bank *bank, char *buf, int buf_
+ 
+ 	/* If OTP Write protection is enabled (User 2), list each
+ 	 * sector that has it enabled */
+-	char otp_str[14];
++	char otp_str[28];
+ 	if (otp_enabled) {
+ 		strcat(prot_str, "\nOTP Protection is enabled for sectors:\n");
+ 		for (int i = 0; i < bank->num_sectors; i++) {
+diff --git a/src/target/arm_adi_v5.c b/src/target/arm_adi_v5.c
+index 828610bb..634004c0 100644
+--- a/src/target/arm_adi_v5.c
++++ b/src/target/arm_adi_v5.c
+@@ -1123,7 +1123,7 @@ static int dap_rom_display(struct command_context *cmd_ctx,
+ 	int retval;
+ 	uint64_t pid;
+ 	uint32_t cid;
+-	char tabs[16] = "";
++	char tabs[32] = "";
+ 
+ 	if (depth > 16) {
+ 		command_print(cmd_ctx, "\tTables too deep");
+diff --git a/tcl/board/esp-wroom-32.cfg b/tcl/board/esp-wroom-32.cfg
+index 3d0297c4..20611ca6 100644
+--- a/tcl/board/esp-wroom-32.cfg
++++ b/tcl/board/esp-wroom-32.cfg
+@@ -34,7 +34,7 @@ transport select jtag
+ #
+ # On DevKit-J, this can go as high as 20MHz if CPU frequency is 80MHz, or 26MHz
+ # if CPU frequency is 160MHz or 240MHz.
+-adapter_khz 20000
++#adapter_khz 20000
+ 
+ # If single core debugging is required, uncomment the following line
+ # set ESP32_ONLYCPU 1
